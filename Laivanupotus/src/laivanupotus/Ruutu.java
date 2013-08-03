@@ -18,6 +18,11 @@ public class Ruutu {
         osuma = false;
     }
     
+    public Ruutu(int i, boolean x) {
+        this.setLaivatyyppi(i);
+        this.osuma = x;
+    }
+    
     //getterit
     
     public int getLaivatyyppi() {
@@ -30,24 +35,43 @@ public class Ruutu {
     
     //setterit
     
+    /**
+     * "Maalaa" laivaa ruudulle. Jos laivatyyppi on muutakuin positiivinen
+     * käytetään arvoa 1 (yhen ruudun pituinen laiva)
+     * @param i laivatyyppi
+     */
     public void setLaivatyyppi(int i) {
+        if (i > 0) {
         this.laivatyyppi = i;
         return;
+        }
+        else {
+            this.laivatyyppi = 1;
+            return;
+        }
     }
     
     //Totuusarvo osuma on true kun ruutuun ammutaan
     
     public void Ammu() {
         this.osuma = true;
+        // TODO Selvitä laivatilanne ja kerro laskurille tjsp
     }
     
-    //toString
-    
-    public String toString() {
+    /**
+     * @param oma saa arvon true jos kyseessä on omalla puolella oleva ruutu
+     * näyttää tällöin siinä olevan löytämättömän laivan
+     */ 
+    public String toString(boolean oma) {
         String merkki = "";
         
-        if (this.laivatyyppi > 0 && osuma == false) {
+        if (this.laivatyyppi > 0 && osuma == false && oma == true) {
             merkki = "[S]";
+        }
+        
+        //piilottaa löytämättömän laivan
+        if (this.laivatyyppi > 0 && osuma == false && oma == false) {
+            merkki = "[ ]";
         }
         
         if (this.laivatyyppi == 0 && osuma == true) {
@@ -64,3 +88,4 @@ public class Ruutu {
         return merkki;
     }
 }
+    
