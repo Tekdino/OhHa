@@ -18,6 +18,11 @@ public class Ruutu {
         osuma = false;
     }
     
+    /**
+     * Kuormitettu konstruktori nopeuttamaan ruudun asettamista tarvittaessa
+     * @param i laivatyyppi (positiivinen kokonaisluku)
+     * @param x totuusarvo, true = ruutuun on ammuttu
+     */
     public Ruutu(int i, boolean x) {
         this.setLaivatyyppi(i);
         this.osuma = x;
@@ -53,7 +58,7 @@ public class Ruutu {
     
     //Totuusarvo osuma on true kun ruutuun ammutaan
     
-    public void Ammu() {
+    public void ammu() {
         this.osuma = true;
         // TODO Selvitä laivatilanne ja kerro laskurille tjsp
     }
