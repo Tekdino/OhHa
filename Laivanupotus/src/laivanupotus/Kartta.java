@@ -5,9 +5,32 @@ package laivanupotus;
  *vastustajana (laivat näkyvät vain kun niihin on osuttu)
  */
 public class Kartta {
+    private int vaaka;
+    private int pysty;
+    Ruutu[][] omaPuoli = new Ruutu[vaaka][pysty];
+    Ruutu[][] vihuPuoli = new Ruutu[vaaka][pysty];
+    
     
     public Kartta() {
-        Ruutu[][] omaPuoli = new Ruutu[10][10];
-        Ruutu[][] vihuPuoli = new Ruutu[10][10];
+        vaaka = 10;
+        pysty = 10;
     }
+    
+    /**
+     * Muun kuin perinteisen 10x10 ruudukon luominen
+     * @param x vaakaruutujen määrä
+     * @param y pystyruutujen määrä
+     */
+    public Kartta(int x, int y) {
+        vaaka = x;
+        pysty = y;
+    }
+    
+    public void visualisoi() {
+        for (int rivi=0; rivi<omaPuoli.length; rivi++) {
+            for (int sarake=0; sarake<omaPuoli[rivi].length; sarake++)
+                System.out.println(omaPuoli[rivi][sarake]);
+        }
+    }
+      
 }
