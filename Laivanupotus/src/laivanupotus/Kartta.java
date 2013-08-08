@@ -1,5 +1,8 @@
 package laivanupotus;
 
+// TODO Selvitä miks matriisi vaikuttas olevan täynnä nulleja ruutu-ilmentymien
+//sijaa
+
 /**
  *Sisältää kaksi taulukollista ruutuja joista toinen näytetään omana ja toinen 
  *vastustajana (laivat näkyvät vain kun niihin on osuttu)

@@ -2,7 +2,7 @@ package laivanupotus;
 
 /**
  * Ruutu on yksittäinen kartan kohta joka pitää kirjaa siinä mahdollisesti 
- * olevasta laivasta ja siihen osuvasta osumasta.
+ * olevasta laivasta ja siihen tulevasta osumasta.
  */
 public class Ruutu {
     public int laivatyyppi;
