@@ -29,6 +29,10 @@ public class Kartta {
         pysty = y;
     }
     
+    /**
+     * Näyttää tekstiversion kartasta
+     *  TODO koordinaatisto reunoille!
+     */
     public void visualisoi() {
         for (int rivi=0; rivi<omaPuoli.length; rivi++) {
             for (int sarake=0; sarake<omaPuoli[rivi].length; sarake++)
