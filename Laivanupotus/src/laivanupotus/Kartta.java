@@ -8,15 +8,16 @@ package laivanupotus;
  *vastustajana (laivat näkyvät vain kun niihin on osuttu)
  */
 public class Kartta {
-    private int vaaka;
-    private int pysty;
-    Ruutu[][] omaPuoli = new Ruutu[vaaka][pysty];
-    Ruutu[][] vihuPuoli = new Ruutu[vaaka][pysty];
+    public int rivit;
+    public int sarakkeet;
+    public Ruutu[][] omaPuoli;
+    public Ruutu[][] vihuPuoli;
     
     
     public Kartta() {
-        vaaka = 10;
-        pysty = 10;
+        Ruutu[][] omaPuoli = new Ruutu[10][10];
+        Ruutu[][] vihuPuoli = new Ruutu[10][10];
+        this.aseta();
     }
     
     /**
@@ -24,9 +25,22 @@ public class Kartta {
      * @param x vaakaruutujen määrä
      * @param y pystyruutujen määrä
      */
-    public Kartta(int x, int y) {
-        vaaka = x;
-        pysty = y;
+    public Kartta (int x, int y) {
+        rivit = x;
+        sarakkeet = y;
+        Ruutu[][] omaPuoli = new Ruutu[x][y];
+        Ruutu[][] vihuPuoli = new Ruutu[x][y];
+        this.aseta();
+    }
+    
+    /**
+     * Luo jokaiseen matriisin lokeroon Ruudun
+     */
+    public void aseta() {
+        for (int rivi=0; rivi<rivit; rivi++) {
+            for (int sarake=0; sarake<sarakkeet; sarake++)
+                omaPuoli[rivi][sarake] = new Ruutu(0, false);
+        }
     }
     
     /**

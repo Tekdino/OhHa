@@ -14,8 +14,8 @@ public class Ruutu {
      * @param osuma on false kunnes ruutuun ammutaan
      */ 
     public Ruutu() {
-        laivatyyppi = 0;
-        osuma = false;
+        this.laivatyyppi = 0;
+        this.osuma = false;
     }
     
     /**
@@ -24,7 +24,7 @@ public class Ruutu {
      * @param x totuusarvo, true = ruutuun on ammuttu
      */
     public Ruutu(int i, boolean x) {
-        this.setLaivatyyppi(i);
+        this.laivatyyppi = i;
         this.osuma = x;
     }
     
