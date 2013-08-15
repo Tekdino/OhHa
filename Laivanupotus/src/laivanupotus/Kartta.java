@@ -1,8 +1,5 @@
 package laivanupotus;
 
-// TODO Selvitä miks matriisi vaikuttas olevan täynnä nulleja ruutu-ilmentymien
-//sijaa
-
 /**
  *Sisältää kaksi taulukollista ruutuja joista toinen näytetään omana ja toinen 
  *vastustajana (laivat näkyvät vain kun niihin on osuttu)
@@ -10,13 +7,13 @@ package laivanupotus;
 public class Kartta {
     public int rivit;
     public int sarakkeet;
-    public Ruutu[][] omaPuoli;
-    public Ruutu[][] vihuPuoli;
+    public static Ruutu[][] omaPuoli;
+    public static Ruutu[][] vihuPuoli;
     
     
     public Kartta() {
-        Ruutu[][] omaPuoli = new Ruutu[10][10];
-        Ruutu[][] vihuPuoli = new Ruutu[10][10];
+        omaPuoli = new Ruutu[10][10];
+        vihuPuoli = new Ruutu[10][10];
         this.aseta();
     }
     
@@ -28,8 +25,8 @@ public class Kartta {
     public Kartta (int x, int y) {
         rivit = x;
         sarakkeet = y;
-        Ruutu[][] omaPuoli = new Ruutu[x][y];
-        Ruutu[][] vihuPuoli = new Ruutu[x][y];
+        omaPuoli = new Ruutu[x][y];
+        vihuPuoli = new Ruutu[x][y];
         this.aseta();
     }
     
