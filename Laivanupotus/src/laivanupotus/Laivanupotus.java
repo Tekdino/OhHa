@@ -14,7 +14,7 @@ public class Laivanupotus {
      */
     public static void main(String[] args) {
         //pikatesti
-        Kartta kartta = new Kartta(3,3);
+        Kartta kartta = new Kartta(5,5);
         kartta.visualisoi();
     }
 }

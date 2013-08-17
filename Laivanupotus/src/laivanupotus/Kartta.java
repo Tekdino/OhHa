@@ -12,6 +12,8 @@ public class Kartta {
     
     
     public Kartta() {
+        rivit = 10;
+        sarakkeet = 10;
         omaPuoli = new Ruutu[10][10];
         vihuPuoli = new Ruutu[10][10];
         this.aseta();
@@ -35,8 +37,10 @@ public class Kartta {
      */
     public void aseta() {
         for (int rivi=0; rivi<rivit; rivi++) {
-            for (int sarake=0; sarake<sarakkeet; sarake++)
+            for (int sarake=0; sarake<sarakkeet; sarake++) {
                 omaPuoli[rivi][sarake] = new Ruutu(0, false);
+                vihuPuoli[rivi][sarake] = new Ruutu(0, false);
+            }
         }
     }
     
@@ -45,6 +49,14 @@ public class Kartta {
      *  TODO koordinaatisto reunoille!
      */
     public void visualisoi() {
+        System.out.println("Vastustaja:");
+        for (int rivi=0; rivi<vihuPuoli.length; rivi++) {
+            for (int sarake=0; sarake<vihuPuoli[rivi].length; sarake++) {
+                System.out.print(vihuPuoli[rivi][sarake].toString(false));
+            }
+            System.out.print("\n");
+        }
+        System.out.println("Oma puoli:");
         for (int rivi=0; rivi<omaPuoli.length; rivi++) {
             for (int sarake=0; sarake<omaPuoli[rivi].length; sarake++) {
                 System.out.print(omaPuoli[rivi][sarake].toString(true));

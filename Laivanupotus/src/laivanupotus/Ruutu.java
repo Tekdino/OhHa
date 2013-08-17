@@ -1,7 +1,5 @@
 package laivanupotus;
 
-// TODO Selvitä miks toString näkyy niiku sitä ei ois kuormitettu
-
 /**
  * Ruutu on yksittäinen kartan kohta joka pitää kirjaa siinä mahdollisesti 
  * olevasta laivasta ja siihen tulevasta osumasta.
