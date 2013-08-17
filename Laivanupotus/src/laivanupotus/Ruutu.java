@@ -24,7 +24,7 @@ public class Ruutu {
      * @param x totuusarvo, true = ruutuun on ammuttu
      */
     public Ruutu(int i, boolean x) {
-        this.laivatyyppi = i;
+        this.setLaivatyyppi(i);
         this.osuma = x;
     }
     
@@ -41,17 +41,17 @@ public class Ruutu {
     //setterit
     
     /**
-     * "Maalaa" laivaa ruudulle. Jos laivatyyppi on muutakuin positiivinen
-     * käytetään arvoa 1 (yhen ruudun pituinen laiva)
+     * "Maalaa" laivaa ruudulle. Jos laivatyyppi on negatiivinen,
+     * käytetään arvoa 0
      * @param i laivatyyppi
      */
     public void setLaivatyyppi(int i) {
-        if (i > 0) {
+        if (i > -1) {
         this.laivatyyppi = i;
         return;
         }
         else {
-            this.laivatyyppi = 1;
+            this.laivatyyppi = 0;
             return;
         }
     }

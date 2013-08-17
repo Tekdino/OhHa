@@ -9,12 +9,14 @@ import junit.framework.TestCase;
 public class RuutuTest extends TestCase {
     private Ruutu oma;
     private Ruutu vihu;
-    
+    private Ruutu vihu2;
     
     public void setUp() {
         oma = new Ruutu(1, false);
         vihu = new Ruutu(-2, false);
+        vihu2 = new Ruutu(1, false);
         vihu.ammu();
+        vihu2.ammu();
     }
     
     public void testPositiivinenLaivatyyppi() {
@@ -22,7 +24,7 @@ public class RuutuTest extends TestCase {
     }
     
     public void testNegatiivinenLaivatyyppi() {
-        Assert.assertEquals("Negatiivinen laivatyyppi hyväksyttiin", vihu.laivatyyppi, 1);
+        Assert.assertEquals("Negatiivinen laivatyyppi hyväksyttiin", vihu.laivatyyppi, 0);
     }
     
     public void testAmpumattomuus() {
@@ -38,7 +40,7 @@ public class RuutuTest extends TestCase {
     }
     
     public void testToStringKunOsutaanVihuun() {
-        Assert.assertEquals("toString ei toimi kun osutaan vihuun","[X]", vihu.toString(false));
+        Assert.assertEquals("toString ei toimi kun osutaan vihuun","[X]", vihu2.toString(false));
     }
     
     public void testToStringOsumaOmaanLaivaan() {

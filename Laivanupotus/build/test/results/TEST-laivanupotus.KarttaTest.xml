@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Tekdino-Souyz" name="laivanupotus.RuutuTest" tests="7" time="0.207" timestamp="2013-08-17T20:57:24">
+<testsuite errors="2" failures="0" hostname="Tekdino-Souyz" name="laivanupotus.KarttaTest" tests="2" time="0.145" timestamp="2013-08-17T20:57:23">
   <properties>
     <property name="default.javac.source" value="1.7" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -83,7 +83,7 @@
     <property name="ant.project.default-target" value="default" />
     <property name="libs.hibernate-persistence.javadoc" value="" />
     <property name="libs.ejb3-persistence.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\ejb3-persistence.jar" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner laivanupotus.RuutuTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Tekdino\OhHa\Laivanupotus\build\test\results\TEST-laivanupotus.RuutuTest.xml crashfile=C:\Users\Tekdino\OhHa\Laivanupotus\build\junitvmwatcher7798228619931230788.properties propsfile=C:\Users\Tekdino\OhHa\Laivanupotus\build\junit9109751348548374577.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner laivanupotus.KarttaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Tekdino\OhHa\Laivanupotus\build\test\results\TEST-laivanupotus.KarttaTest.xml crashfile=C:\Users\Tekdino\OhHa\Laivanupotus\build\junitvmwatcher1119179180198856842.properties propsfile=C:\Users\Tekdino\OhHa\Laivanupotus\build\junit7943428553311975437.properties" />
     <property name="built-jar.properties" value="C:\Users\Tekdino\OhHa\Laivanupotus\build\built-jar.properties" />
     <property name="libs.junit.src" value="" />
     <property name="ant.junit.enabletestlistenerevents" value="true" />
@@ -110,8 +110,8 @@
     <property name="javadoc.private" value="false" />
     <property name="annotation.processing.processors.list" value="" />
     <property name="sun.desktop" value="windows" />
-    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
     <property name="build.test.classes.dir" value="build/test/classes" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
     <property name="libs.jaxb.src" value="" />
     <property name="libs.MySQLDriver.javadoc" value="" />
     <property name="netbeans.dynamic.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\platform\core\core.jar;C:\Program Files (x86)\NetBeans 7.0.1\platform\core\org-openide-filesystems.jar;C:\Program Files (x86)\NetBeans 7.0.1\platform\core\locale\core_ja.jar;C:\Program Files (x86)\NetBeans 7.0.1\platform\core\locale\core_pt_BR.jar;C:\Program Files (x86)\NetBeans 7.0.1\platform\core\locale\core_ru.jar;C:\Program Files (x86)\NetBeans 7.0.1\platform\core\locale\core_zh_CN.jar;C:\Program Files (x86)\NetBeans 7.0.1\platform\core\locale\org-openide-filesystems_ja.jar;C:\Program Files (x86)\NetBeans 7.0.1\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\Program Files (x86)\NetBeans 7.0.1\platform\core\locale\org-openide-filesystems_ru.jar;C:\Program Files (x86)\NetBeans 7.0.1\platform\core\locale\org-openide-filesystems_zh_CN.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\org-netbeans-upgrader.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\locale\core_nb.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\locale\core_nb_ja.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\locale\core_nb_pt_BR.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\locale\core_nb_ru.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\locale\core_nb_zh_CN.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\locale\org-netbeans-upgrader_ja.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\locale\org-netbeans-upgrader_ru.jar;C:\Program Files (x86)\NetBeans 7.0.1\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
@@ -157,8 +157,8 @@
     <property name="sun.awt.enableExtraMouseButtons" value="true" />
     <property name="libs.junit.classpath" value="C:\Users\Tekdino\.netbeans\7.0\modules\ext\junit-3.8.2.jar" />
     <property name="libs.beans-binding.src" value="" />
-    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.7.0\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec\MyWinLocker 3\x86;C:\Program Files (x86)\EgisTec\MyWinLocker 3\x64;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\OpenVPN\bin;." />
     <property name="ap.supported.internal" value="true" />
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.7.0\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\EgisTec\MyWinLocker 3\x86;C:\Program Files (x86)\EgisTec\MyWinLocker 3\x64;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\OpenVPN\bin;." />
     <property name="libs.toplink.javadoc" value="" />
     <property name="libs.PostgreSQLDriver.javadoc" value="" />
     <property name="libs.eclipselinkmodelgen.maven-pom" value="" />
@@ -173,19 +173,19 @@
     <property name="libs.hibernate-persistence.src" value="" />
     <property name="javadoc.splitindex" value="true" />
     <property name="libs.toplink.src" value="" />
-    <property name="javac.test.processorpath" value=":build/classes:C:\Users\Tekdino\.netbeans\7.0\modules\ext\junit-4.8.2.jar" />
     <property name="libs.javac-api.javadoc" value="" />
+    <property name="javac.test.processorpath" value=":build/classes:C:\Users\Tekdino\.netbeans\7.0\modules\ext\junit-4.8.2.jar" />
     <property name="javadoc.preview" value="true" />
     <property name="libs.MySQLDriver.maven-pom" value="" />
     <property name="libs.CopyLibs.javadoc" value="" />
     <property name="libs.PostgreSQLDriver.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\postgresql-8.3-603.jdbc3.jar" />
     <property name="junit.forkmode" value="perTest" />
-    <property name="libs.jaxws21.maven-pom" value="" />
     <property name="libs.junit_4.classpath" value="C:\Users\Tekdino\.netbeans\7.0\modules\ext\junit-4.8.2.jar" />
+    <property name="libs.jaxws21.maven-pom" value="" />
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.7.0\jre\bin" />
     <property name="build.dir" value="build" />
-    <property name="sun.management.compiler" value="HotSpot Client Compiler" />
     <property name="libs.swing-app-framework.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\appframework-1.0.3.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\swing-worker-1.1.jar" />
+    <property name="sun.management.compiler" value="HotSpot Client Compiler" />
     <property name="libs.ejb3-persistence.javadoc" value="" />
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
     <property name="user.variant" value="" />
@@ -194,15 +194,15 @@
     <property name="ant.file.Laivanupotus-impl" value="C:\Users\Tekdino\OhHa\Laivanupotus\nbproject\build-impl.xml" />
     <property name="libs.hibernate-support.src" value="" />
     <property name="annotation.processing.enabled" value="true" />
-    <property name="run.jvmargs" value="" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
+    <property name="run.jvmargs" value="" />
     <property name="build.compiler.emacs" value="true" />
     <property name="ant.project.name" value="Laivanupotus" />
     <property name="libs.swing-layout.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\platform\modules\ext\swing-layout-1.0.4.jar" />
     <property name="libs.spring-framework.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\commons-logging-1.1.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\cglib-2.2.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\spring\spring-2.5.6.SEC01.jar" />
     <property name="java.vm.specification.version" value="1.7" />
-    <property name="libs.jaxb.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\jaxb-impl.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\jaxb-xjc.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\jaxb1-impl.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\activation.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\api\jaxb-api.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\api\jsr173_api.jar" />
     <property name="work.dir" value="C:\Users\Tekdino\OhHa\Laivanupotus" />
+    <property name="libs.jaxb.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\jaxb-impl.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\jaxb-xjc.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\jaxb1-impl.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\activation.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\api\jaxb-api.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\jaxb\api\jsr173_api.jar" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="manifest.available+main.class-mkdist.available" value="true" />
     <property name="javadoc.use" value="true" />
@@ -218,21 +218,20 @@
     <property name="debug-transport" value="dt_shmem" />
     <property name="libs.ejb3-persistence.maven-pom" value="" />
     <property name="application.args" value="" />
-    <property name="sun.cpu.endian" value="little" />
     <property name="ant.file.type.Laivanupotus" value="file" />
+    <property name="sun.cpu.endian" value="little" />
     <property name="compile.on.save" value="true" />
     <property name="libs.hibernate-support.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\antlr-2.7.6.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\asm.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\asm-attrs.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\cglib-2.1.3.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\commons-collections-2.1.1.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\commons-logging-1.1.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\dom4j-1.6.1.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\ehcache-1.2.3.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\jdbc2_0-stdext.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\jta.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate3.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate-tools.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate-annotations.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate-commons-annotations.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate-entitymanager.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\javassist.jar" />
     <property name="ignore.failing.tests" value="true" />
-    <property name="libs.eclipselinkmodelgen.javadoc" value="" />
     <property name="endorsed.classpath.cmd.line.arg" value="-Xbootclasspath/p:&apos;C:\Users\Tekdino\OhHa\Laivanupotus\${endorsed.classpath}&apos;" />
+    <property name="libs.eclipselinkmodelgen.javadoc" value="" />
     <property name="jar.index" value="false" />
     <property name="libs.spring-framework300.javadoc" value="" />
-    <property name="libs.MySQLDriver.src" value="" />
     <property name="java.vm.version" value="21.0-b17" />
+    <property name="libs.MySQLDriver.src" value="" />
     <property name="libs.hibernate-persistence.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\antlr-2.7.6.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\asm.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\asm-attrs.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\cglib-2.1.3.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\commons-collections-2.1.1.jar;C:\Program Files (x86)\NetBeans 7.0.1\ide\modules\ext\commons-logging-1.1.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\dom4j-1.6.1.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\ehcache-1.2.3.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\jdbc2_0-stdext.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\jta.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate3.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate-tools.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate-annotations.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate-commons-annotations.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\hibernate-entitymanager.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\javassist.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\ejb3-persistence.jar" />
-    <property name="java.class.path" value="C:\Users\Tekdino\OhHa\Laivanupotus\build\classes;C:\Users\Tekdino\.netbeans\7.0\modules\ext\junit-4.8.2.jar;C:\Users\Tekdino\OhHa\Laivanupotus\build\test\classes;C:\Program Files (x86)\NetBeans 7.0.1\java\ant\lib\ant-launcher.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\ant\lib\ant.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\ant\lib\ant-junit.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\ant\lib\ant-junit4.jar" />
     <property name="annotation.processing.processor.options" value="" />
-    <property name="tests.failed" value="true" />
+    <property name="java.class.path" value="C:\Users\Tekdino\OhHa\Laivanupotus\build\classes;C:\Users\Tekdino\.netbeans\7.0\modules\ext\junit-4.8.2.jar;C:\Users\Tekdino\OhHa\Laivanupotus\build\test\classes;C:\Program Files (x86)\NetBeans 7.0.1\java\ant\lib\ant-launcher.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\ant\lib\ant.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\ant\lib\ant-junit.jar;C:\Program Files (x86)\NetBeans 7.0.1\java\ant\lib\ant-junit4.jar" />
     <property name="os.arch" value="x86" />
     <property name="javac.deprecation" value="false" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
@@ -276,13 +275,16 @@
     <property name="sun.arch.data.model" value="32" />
     <property name="mkdist.disabled" value="false" />
   </properties>
-  <testcase classname="laivanupotus.RuutuTest" name="testToStringOsumaOmaanLaivaan" time="0.008" />
-  <testcase classname="laivanupotus.RuutuTest" name="testPositiivinenLaivatyyppi" time="0.0" />
-  <testcase classname="laivanupotus.RuutuTest" name="testNegatiivinenLaivatyyppi" time="0.001" />
-  <testcase classname="laivanupotus.RuutuTest" name="testToStringOmaLaivaRuudussa" time="0.002" />
-  <testcase classname="laivanupotus.RuutuTest" name="testToStringKunOsutaanVihuun" time="0.0" />
-  <testcase classname="laivanupotus.RuutuTest" name="testAmmu" time="0.0" />
-  <testcase classname="laivanupotus.RuutuTest" name="testAmpumattomuus" time="0.0" />
+  <testcase classname="laivanupotus.KarttaTest" name="testOikeaMaaraSarakkeita" time="0.008">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at laivanupotus.KarttaTest.testOikeaMaaraSarakkeita(KarttaTest.java:21)
+</error>
+  </testcase>
+  <testcase classname="laivanupotus.KarttaTest" name="testOikeaMaaraRiveja" time="0.002">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at laivanupotus.KarttaTest.testOikeaMaaraRiveja(KarttaTest.java:17)
+</error>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
