@@ -19,10 +19,10 @@ public class Kartta {
     
     /**
      * Muun kuin perinteisen 10x10 ruudukon luominen
-     * @param x vaakaruutujen määrä
-     * @param y pystyruutujen määrä
+     * @param y vaakaruutujen määrä
+     * @param x pystyruutujen määrä
      */
-    public Kartta (int x, int y) {
+    public Kartta (int y, int x) {
         rivit = x;
         sarakkeet = y;
         omaPuoli = new Ruutu[x][y];
@@ -46,8 +46,10 @@ public class Kartta {
      */
     public void visualisoi() {
         for (int rivi=0; rivi<omaPuoli.length; rivi++) {
-            for (int sarake=0; sarake<omaPuoli[rivi].length; sarake++)
-                System.out.println(omaPuoli[rivi][sarake]);
+            for (int sarake=0; sarake<omaPuoli[rivi].length; sarake++) {
+                System.out.print(omaPuoli[rivi][sarake].toString(true));
+            }
+            System.out.print("\n");
         }
     }
       
