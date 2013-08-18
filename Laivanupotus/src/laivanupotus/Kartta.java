@@ -7,8 +7,8 @@ package laivanupotus;
 public class Kartta {
     public int rivit;
     public int sarakkeet;
-    public static Ruutu[][] omaPuoli;
-    public static Ruutu[][] vihuPuoli;
+    public Ruutu[][] omaPuoli;
+    public Ruutu[][] vihuPuoli;
     
     
     public Kartta() {

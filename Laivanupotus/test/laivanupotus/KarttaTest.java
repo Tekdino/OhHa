@@ -10,8 +10,10 @@ public class KarttaTest extends TestCase {
     private Kartta ruudukko;
     
     public void SetUp() {
-        Kartta ruudukko = new Kartta(2,3);
+        ruudukko = new Kartta(2,3);
     }
+    
+    // TODO Selvitä miks tää heittää NullPointerExceptionin
     
     public void testOikeaMaaraRiveja() {
         Assert.assertEquals("Väärä määrä rivejä", ruudukko.rivit, 2);

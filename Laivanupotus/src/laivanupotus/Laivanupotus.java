@@ -5,7 +5,6 @@ package laivanupotus;
 
 /**
  *
- * @author Tekdino
  */
 public class Laivanupotus {
 
