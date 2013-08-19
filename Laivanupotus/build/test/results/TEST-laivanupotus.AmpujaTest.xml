@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="2" failures="0" hostname="Tekdino-Souyz" name="laivanupotus.KarttaTest" tests="2" time="0.125" timestamp="2013-08-19T10:44:46">
+<testsuite errors="0" failures="0" hostname="Tekdino-Souyz" name="laivanupotus.AmpujaTest" tests="2" time="0.125" timestamp="2013-08-19T10:44:45">
   <properties>
     <property name="default.javac.source" value="1.7" />
     <property name="file.encoding.pkg" value="sun.io" />
@@ -83,7 +83,7 @@
     <property name="ant.project.default-target" value="default" />
     <property name="libs.hibernate-persistence.javadoc" value="" />
     <property name="libs.ejb3-persistence.classpath" value="C:\Program Files (x86)\NetBeans 7.0.1\java\modules\ext\hibernate\ejb3-persistence.jar" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner laivanupotus.KarttaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Tekdino\OhHa\Laivanupotus\build\test\results\TEST-laivanupotus.KarttaTest.xml crashfile=C:\Users\Tekdino\OhHa\Laivanupotus\build\junitvmwatcher8192943078699037069.properties propsfile=C:\Users\Tekdino\OhHa\Laivanupotus\build\junit152133699574282801.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner laivanupotus.AmpujaTest filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Tekdino\OhHa\Laivanupotus\build\test\results\TEST-laivanupotus.AmpujaTest.xml crashfile=C:\Users\Tekdino\OhHa\Laivanupotus\build\junitvmwatcher2612895813376820722.properties propsfile=C:\Users\Tekdino\OhHa\Laivanupotus\build\junit2481464181661908273.properties" />
     <property name="built-jar.properties" value="C:\Users\Tekdino\OhHa\Laivanupotus\build\built-jar.properties" />
     <property name="libs.junit.src" value="" />
     <property name="ant.junit.enabletestlistenerevents" value="true" />
@@ -275,16 +275,8 @@
     <property name="sun.arch.data.model" value="32" />
     <property name="mkdist.disabled" value="false" />
   </properties>
-  <testcase classname="laivanupotus.KarttaTest" name="testOikeaMaaraRiveja" time="0.016">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at laivanupotus.KarttaTest.testOikeaMaaraRiveja(KarttaTest.java:19)
-</error>
-  </testcase>
-  <testcase classname="laivanupotus.KarttaTest" name="testOikeaMaaraSarakkeita" time="0.0">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at laivanupotus.KarttaTest.testOikeaMaaraSarakkeita(KarttaTest.java:23)
-</error>
-  </testcase>
+  <testcase classname="laivanupotus.AmpujaTest" name="testAmpuminenOikeaanRuutuun" time="0.0" />
+  <testcase classname="laivanupotus.AmpujaTest" name="testVihunAmpuminenEiVaikutaOmiinRuutuihin" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
