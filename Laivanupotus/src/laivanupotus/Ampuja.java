@@ -8,8 +8,8 @@ public class Ampuja {
     Kartta kartta;
     
     /**
-     * Konstruktorille annetaan parametrina käytettävä Kartta
-     * @param peli luokan käyttämä Kartta halutuilla parametreilla
+     * Uusi olio tarvitsee parametrina valmiin Kartan
+     * @param peli luokan käyttämä Kartta
      */
     public Ampuja(Kartta peli) {
         kartta = peli;
