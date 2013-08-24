@@ -17,24 +17,24 @@ public class Laivanupotus {
         
         //Lisätään laivat
         int maara = kysyLuku("Montako laivaa lisätään?");
+        boolean onnistuu;
         
         for (int i=0; i<maara; i++) {
-        int tyyppi = kysyLuku("Laivan " + i+1 + "/" + maara + " pituus?");
+        int tyyppi = kysyLuku("Laivan " + (i+1) + "/" + maara + " pituus?");
         int asento = kysyLuku("Laivan asento? 1=vaaka, 2=pysty");
         int sarake = kysyLuku("Laivan vasemmanpuoleisimman/ylimmän ruudun sarakekoordinaatti?");
         int rivi = kysyLuku("Laivan vasemmanpuoleisimman/ylimmän ruudun rivikoordinaatti?");
-        laivaaja.laivaa(tyyppi, rivi, sarake, asento, true);
-        
+        laivaaja.laivaa(tyyppi, rivi-1, sarake-1, asento, true);
         //Arpoo samalla vastustajalle saman kokoisen laivan
-        boolean onnistuu;
         do {
         laivaaja.arvoRuutu();
         onnistuu = laivaaja.tunnusteleLaiva(tyyppi, laivaaja.vapaaY, laivaaja.vapaaX);
         } while (onnistuu == false);
+        laivaaja.laivaa(tyyppi, laivaaja.vapaaY, laivaaja.vapaaX, asento, false);
         kartta.visualisoi();
         }
         
-        //Laivat lisätty, peli alkaa
+        // TODO Selvitä miks lisää ylimääräsiä laivoja omalle puolelle
     }
     
     /**

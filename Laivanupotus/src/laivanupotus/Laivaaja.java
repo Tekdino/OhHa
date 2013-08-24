@@ -29,7 +29,7 @@ public class Laivaaja {
         x = noppa.nextInt(laskuri.kartta.rivit);
         y = noppa.nextInt(laskuri.kartta.sarakkeet);
         }
-        while (laskuri.kartta.vihuPuoli[x][y].laivatyyppi==0);
+        while (laskuri.kartta.vihuPuoli[x][y].laivatyyppi!=0);
         vapaaX = x;
         vapaaY = y;
 }
