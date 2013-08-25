@@ -1,7 +1,9 @@
 package laivanupotus;
 import java.util.Scanner;
 
-
+/**
+ * Pelin komentoriviversio
+ */
 public class Laivanupotus {
     public static Scanner lukija = new Scanner(System.in);
 
