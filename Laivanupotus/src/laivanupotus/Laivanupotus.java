@@ -70,16 +70,12 @@ public class Laivanupotus {
                     sensori2 = ampuja.viereen(ampuja.ammuttuX,ampuja.ammuttuY); //vastustajan uusi yritys
                     
                                 if (sensori2==true) { laskuri.omatRuudut--; } //osui taas
-                                if (sensori2==false) { break; } //ampuu ohi
                     
                     if (laskuri.omatRuudut <=0) { //vastustaja upottaa vikan laivan
                         break;
                     }
                 } 
                 while (sensori2 == true);
-                }
-                else if (sensori==false) {
-                    break;
                 }
                 
                 kartta.visualisoi();
