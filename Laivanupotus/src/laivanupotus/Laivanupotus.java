@@ -25,14 +25,74 @@ public class Laivanupotus {
         int sarake = kysyLuku("Laivan vasemmanpuoleisimman/ylimmän ruudun sarakekoordinaatti?");
         int rivi = kysyLuku("Laivan vasemmanpuoleisimman/ylimmän ruudun rivikoordinaatti?");
         laivaaja.laivaa(tyyppi, rivi-1, sarake-1, asento, true);
+        laskuri.omatRuudut += tyyppi;
+        laskuri.vihunRuudut += tyyppi;
         
         //Arpoo samalla vastustajalle saman kokoisen laivan
         do {
         laivaaja.arvoRuutu();
         onnistuu = laivaaja.tunnusteleLaiva(tyyppi, laivaaja.vapaaY, laivaaja.vapaaX);
         } while (onnistuu == false);
-        kartta.debugVisualisoi(); // TODO tähän kartta.visualisoi() sitku homma toimii!
+        kartta.visualisoi();
         }
+        
+        //Laivat on aseteltu, peli alkuun
+        
+        do {
+            if (laskuri.pelivuoro == true) { //pelaajan pelivuoro
+                int y = kysyLuku("Ammuksen sarakekoordinaatti?");
+                int z = kysyLuku("Ammuksen rivikoordinaatti?");
+                ampuja.ammu(z-1, y-1); //pelaaja ampuu
+                
+                if (kartta.vihuPuoli[z-1][y-1].laivatyyppi >0) { //osuma
+                    kartta.visualisoi();
+                    laskuri.vihunRuudut --;
+                    System.out.println("Osuma! Ammu uudestaan");
+                }
+                
+                else if (kartta.vihuPuoli[z-1][y-1].laivatyyppi == 0) { //huti
+                    kartta.visualisoi();
+                    System.out.println("Huti");
+                    laskuri.seuraavaVuoro();
+                }
+                
+            }
+            
+            if (laskuri.pelivuoro == false) { //vastustajan vuoro
+                boolean sensori;
+                boolean sensori2;
+                sensori = ampuja.isku();
+   
+                if (sensori==true) { //osuu ekalla
+                    laskuri.omatRuudut--;
+                    
+                    do {
+                    sensori2 = ampuja.viereen(ampuja.ammuttuX,ampuja.ammuttuY); //vastustajan uusi yritys
+                    
+                                if (sensori2==true) { laskuri.omatRuudut--; } //osui taas
+                                if (sensori2==false) { break; } //ampuu ohi
+                    
+                    if (laskuri.omatRuudut <=0) { //vastustaja upottaa vikan laivan
+                        break;
+                    }
+                } 
+                while (sensori2 == true);
+                }
+                else if (sensori==false) {
+                    break;
+                }
+                
+                kartta.visualisoi();
+                laskuri.pelivuoro = true;
+            }
+            
+        } while (laskuri.vihunRuudut > 0);
+        
+        //jompikumpi osapuoli hävinnyt
+        
+        kartta.visualisoi();
+        System.out.println("Loppu");
+        
     }
     
     /**

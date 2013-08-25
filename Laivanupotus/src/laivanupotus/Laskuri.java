@@ -11,6 +11,8 @@ public class Laskuri {
     int osumat = 0; //laskee osumia viholliseen
     int[] omiaLaivoja; //taulukko johon listattu jäljellä olevien laivojen määrät
     int[] vihunLaivoja; //niin että paikassa [1]=laivatyyppi ykkösen laivat jne
+    public int omatRuudut; //monessako ruudussa oma laiva
+    public int vihunRuudut; //monessako ruudussa vastustajan laiva
     
     /**
      * Uusi laskuri tarvitsee parametrina valmiin Kartan
@@ -70,10 +72,10 @@ public class Laskuri {
     }
     
     /**
-     * Asettaa laskurin taulukkoon laivatyypit ja -määrät
+     * Lisää laskurin taulukkoon laivatyypit ja -määrät
      * @param oma true = omia laivoja, false = vastustajan laivoja
      * @param tyyppi laivan tyyppi
-     * @param maara tämän tyyppisten laivojen määrä
+     * @param maara tämän tyyppisten laivaruutujen määrä
      */
     public void asetaLaivoja(boolean oma, int tyyppi, int maara) {
         if (oma == true) {
