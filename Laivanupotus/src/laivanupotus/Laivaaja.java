@@ -75,7 +75,7 @@ public class Laivaaja {
      */
     public void laivaa(int laivanPituus, int rivi, int sarake, int suunta, boolean oma) {
         //laiva omalle puolelle
-        if (oma = true) {
+        if (oma == true) {
           if (suunta == 1) { //vaakatasoon
             for (int i=0; i<laivanPituus; i++) {
             laskuri.kartta.omaPuoli[rivi][sarake+i].laivatyyppi = laivanPituus;
@@ -88,7 +88,7 @@ public class Laivaaja {
           }
           }
         //laiva vastustajan puolelle
-        else if (oma = false) {
+        else if (oma == false) {
           if (suunta == 1) { //vaakatasoon
             for (int i=0; i<laivanPituus; i++) {
             laskuri.kartta.vihuPuoli[rivi][sarake+i].laivatyyppi = laivanPituus;

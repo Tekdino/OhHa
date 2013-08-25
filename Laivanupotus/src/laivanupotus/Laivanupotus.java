@@ -25,16 +25,14 @@ public class Laivanupotus {
         int sarake = kysyLuku("Laivan vasemmanpuoleisimman/ylimmän ruudun sarakekoordinaatti?");
         int rivi = kysyLuku("Laivan vasemmanpuoleisimman/ylimmän ruudun rivikoordinaatti?");
         laivaaja.laivaa(tyyppi, rivi-1, sarake-1, asento, true);
+        
         //Arpoo samalla vastustajalle saman kokoisen laivan
         do {
         laivaaja.arvoRuutu();
         onnistuu = laivaaja.tunnusteleLaiva(tyyppi, laivaaja.vapaaY, laivaaja.vapaaX);
         } while (onnistuu == false);
-        laivaaja.laivaa(tyyppi, laivaaja.vapaaY, laivaaja.vapaaX, asento, false);
-        kartta.visualisoi();
+        kartta.debugVisualisoi(); // TODO tähän kartta.visualisoi() sitku homma toimii!
         }
-        
-        // TODO Selvitä miks lisää ylimääräsiä laivoja omalle puolelle
     }
     
     /**

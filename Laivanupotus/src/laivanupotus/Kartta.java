@@ -64,5 +64,25 @@ public class Kartta {
             System.out.print("\n");
         }
     }
+    
+    /**
+     * Näyttää vihollisen puolen yhtä avoimesti kuin oman puolen
+     */
+    public void debugVisualisoi() {
+        System.out.println("Vastustaja:");
+        for (int rivi=0; rivi<vihuPuoli.length; rivi++) {
+            for (int sarake=0; sarake<vihuPuoli[rivi].length; sarake++) {
+                System.out.print(vihuPuoli[rivi][sarake].toString(true));
+            }
+            System.out.print("\n");
+        }
+        System.out.println("Oma puoli:");
+        for (int rivi=0; rivi<omaPuoli.length; rivi++) {
+            for (int sarake=0; sarake<omaPuoli[rivi].length; sarake++) {
+                System.out.print(omaPuoli[rivi][sarake].toString(true));
+            }
+            System.out.print("\n");
+        }
+    }
       
 }
