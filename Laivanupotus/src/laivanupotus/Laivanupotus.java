@@ -33,17 +33,17 @@ public class Laivanupotus {
         asento = kysyLuku("Laivan asento? 1=vaaka, 2=pysty");
         if (asento == 1) {
             sarake = kysyLuku("Laivan vasemmanpuoleisimman ruudun sarakekoordinaatti?");
-            rivi = kysyLuku("Laivan vasemmanpuoleisimman ruudun rivikoordinaatti?");
+            rivi = kysyLuku("Mille riville laiva tulee?");
         }
         else if (asento == 2) {
-            sarake = kysyLuku("Laivan ylimmän ruudun sarakekoordinaatti?");
+            sarake = kysyLuku("Mihin sarakkeeseen laiva tulee?");
             rivi = kysyLuku("Laivan ylimmän ruudun rivikoordinaatti?");
         }
         else {
             System.out.println("Koska annettu asento oli jotain muuta kuin 1 tai 2, asennoksi otetaan vaaka!");
             asento = 1;
             sarake = kysyLuku("Laivan vasemmanpuoleisimman ruudun sarakekoordinaatti?");
-            rivi = kysyLuku("Laivan vasemmanpuoleisimman ruudun rivikoordinaatti?");
+            rivi = kysyLuku("Mille riville laiva tulee?");
         }
         sopii = laivaaja.tunnusteleTilaus(tyyppi, rivi-1, sarake-1, asento); //sopiiko laiva näin
         if (sopii == false) { System.out.println("Laiva ei mahdu näin! Kokeile uudestaan"); }
