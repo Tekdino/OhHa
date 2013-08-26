@@ -33,6 +33,31 @@ public class Laivaaja {
         vapaaX = x;
         vapaaY = y;
 }
+    /**
+     * Kokeilee mahtuuko laiva ruudukkoon siihen kohtaan mihin pelaaja yrittää laittaa sitä
+     * @param laivanPituus laivan pituus
+     * @param rivi aloituskohdan rivikoordinaatti
+     * @param sarake aloituskohdan sarakekoordinaatti
+     * @param asento 1=vaaka, 2=pysty
+     * @return true=laiva mahtuu, false=laiva ei mahdu
+     */
+    public boolean tunnusteleTilaus(int laivanPituus, int rivi, int sarake, int asento) {
+        if (asento==1) {
+            if ((sarake + laivanPituus) <= laskuri.kartta.rivit) { //laiva mahtuu näinpäin
+                laivaa(laivanPituus, rivi, sarake, asento, false); //laitetaan laiva tuohon kohtaan
+                return true;
+            }
+            else return false; //laiva ei mahtunut
+            }
+        if (asento==2) {
+            if ((rivi + laivanPituus) <= laskuri.kartta.sarakkeet) { //laiva mahtuu näinpäin
+                laivaa(laivanPituus, rivi, sarake, asento, false); //laitetaan laiva tuohon kohtaan
+                return true;
+            }
+            else return false; //laiva ei mahtunut
+        }
+        return false;
+    }
     
     /**
      * Etsii tietyn pituiselle laivalle vapaan asennon alkaen annetusta ruudusta

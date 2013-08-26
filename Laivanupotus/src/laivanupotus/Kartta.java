@@ -50,8 +50,11 @@ public class Kartta {
     public void visualisoi() {
         System.out.println("Vastustaja:");
         
-        for (int sarakeluku=1; sarakeluku<vihuPuoli.length+1; sarakeluku++) {
-            System.out.print("."+sarakeluku+".");
+        for (int sarakeluku=1; sarakeluku<vihuPuoli[1].length+1; sarakeluku++) {
+            
+            if (sarakeluku < 10) { System.out.print("."+sarakeluku+"."); }
+            else if (sarakeluku >= 10) { System.out.print(sarakeluku+"."); }
+        
         }
         System.out.print("\n");
         
@@ -63,8 +66,10 @@ public class Kartta {
         }
         System.out.println("Oma puoli:");
         
-        for (int sarakeluku=1; sarakeluku<vihuPuoli.length+1; sarakeluku++) {
-            System.out.print("."+sarakeluku+".");
+        for (int sarakeluku=1; sarakeluku<vihuPuoli[1].length+1; sarakeluku++) {
+            
+            if (sarakeluku < 10) { System.out.print("."+sarakeluku+"."); }
+            else if (sarakeluku >= 10) { System.out.print(sarakeluku+"."); }
         }
         
         System.out.print("\n");

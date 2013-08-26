@@ -16,16 +16,39 @@ public class Laivanupotus {
         Ampuja ampuja = new Ampuja(kartta);
         Laskuri laskuri = new Laskuri(kartta);
         Laivaaja laivaaja = new Laivaaja(laskuri);
+        kartta.visualisoi();
         
         //Lisätään laivat
         int maara = kysyLuku("Montako laivaa lisätään?");
         boolean onnistuu;
+        boolean sopii;
+        int tyyppi;
+        int asento;
+        int sarake;
+        int rivi;
         
         for (int i=0; i<maara; i++) {
-        int tyyppi = kysyLuku("Laivan " + (i+1) + "/" + maara + " pituus?");
-        int asento = kysyLuku("Laivan asento? 1=vaaka, 2=pysty");
-        int sarake = kysyLuku("Laivan vasemmanpuoleisimman/ylimmän ruudun sarakekoordinaatti?");
-        int rivi = kysyLuku("Laivan vasemmanpuoleisimman/ylimmän ruudun rivikoordinaatti?");
+            do {
+        tyyppi = kysyLuku("Laivan " + (i+1) + "/" + maara + " pituus?");
+        asento = kysyLuku("Laivan asento? 1=vaaka, 2=pysty");
+        if (asento == 1) {
+            sarake = kysyLuku("Laivan vasemmanpuoleisimman ruudun sarakekoordinaatti?");
+            rivi = kysyLuku("Laivan vasemmanpuoleisimman ruudun rivikoordinaatti?");
+        }
+        else if (asento == 2) {
+            sarake = kysyLuku("Laivan ylimmän ruudun sarakekoordinaatti?");
+            rivi = kysyLuku("Laivan ylimmän ruudun rivikoordinaatti?");
+        }
+        else {
+            System.out.println("Koska annettu asento oli jotain muuta kuin 1 tai 2, asennoksi otetaan vaaka!");
+            asento = 1;
+            sarake = kysyLuku("Laivan vasemmanpuoleisimman ruudun sarakekoordinaatti?");
+            rivi = kysyLuku("Laivan vasemmanpuoleisimman ruudun rivikoordinaatti?");
+        }
+        sopii = laivaaja.tunnusteleTilaus(tyyppi, rivi-1, sarake-1, asento); //sopiiko laiva näin
+        if (sopii == false) { System.out.println("Laiva ei mahdu näin! Kokeile uudestaan"); }
+            } while (sopii==false);
+            
         laivaaja.laivaa(tyyppi, rivi-1, sarake-1, asento, true);
         laskuri.omatRuudut += tyyppi;
         laskuri.vihunRuudut += tyyppi;
@@ -42,8 +65,16 @@ public class Laivanupotus {
         
         do {
             if (laskuri.pelivuoro == true) { //pelaajan pelivuoro
-                int y = kysyLuku("Ammuksen sarakekoordinaatti?");
-                int z = kysyLuku("Ammuksen rivikoordinaatti?");
+                int y;
+                do {
+                y = kysyLuku("Ammuksen sarakekoordinaatti?");
+                if (y> kartta.sarakkeet) { System.out.println("Sarakkeita on vain " + kartta.sarakkeet + "!"); }
+                } while (y > kartta.sarakkeet);
+                int z;
+                do {
+                z = kysyLuku("Ammuksen rivikoordinaatti?");
+                if (z > kartta.rivit) { System.out.println("Rivejä on vain " + kartta.rivit + "!"); }
+                } while (z > kartta.rivit);
                 ampuja.ammu(z-1, y-1); //pelaaja ampuu
                 
                 if (kartta.vihuPuoli[z-1][y-1].laivatyyppi >0) { //osuma
@@ -93,6 +124,10 @@ public class Laivanupotus {
         
     }
     
+    
+    //TYÖKALUMETODIT
+    
+    
     /**
      * Kysyy luvun ja tarkistaa että kyseessä on luku
      * @param kysymys Lause joka näytetään käyttäjälle
@@ -100,9 +135,31 @@ public class Laivanupotus {
      */
     public static int kysyLuku(String kysymys) {
         System.out.println(kysymys);
-        int luku = lukija.nextInt();
+        boolean toimii = true;
+        int luku =-1;
+        
+        do {
+        
+        String vastaus = lukija.nextLine();
+        
+        try {
+            vastaus = vastaus.trim(); //karsii mahdolliset välilyönnit
+            luku = Integer.parseInt(vastaus);
+            if (luku>0) {
+                toimii = true;
+                return luku;
+            }
+            else if (luku<=0) {
+                toimii = false;
+                System.out.println("Luvun on oltava suurempi kuin nolla! " + kysymys);
+            }
+        }
+        
+        catch (NumberFormatException e) {
+            System.out.println("Käytä vain numeroita! " + kysymys);
+            toimii = false;
+        }
+    } while (!toimii);
         return luku;
-        // TODO Tähän virheenkäsittely, poikkeukset ja loop kunnes kunnollinen
-        // luku on annettu
     }
 }
