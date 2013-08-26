@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Laivanupotus {
     public static Scanner lukija = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void  pelaa() {
         //Rakennellaan peli
         int leveys = kysyLuku("Kartan leveys ruutuina?");
         int korkeus = kysyLuku("Kartan korkeus ruutuina?");
