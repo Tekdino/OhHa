@@ -1,5 +1,6 @@
 package laivanupotus;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  * Pelin komentoriviversio
@@ -50,15 +51,32 @@ public class Laivanupotus {
             } while (sopii==false);
             
         laivaaja.laivaa(tyyppi, rivi-1, sarake-1, asento, true);
-        laskuri.omatRuudut += tyyppi;
-        laskuri.vihunRuudut += tyyppi;
         
         //Arpoo samalla vastustajalle saman kokoisen laivan
         do {
         laivaaja.arvoRuutu();
         onnistuu = laivaaja.tunnusteleLaiva(tyyppi, laivaaja.vapaaY, laivaaja.vapaaX);
         } while (onnistuu == false);
+        laivaaja.laivaa(tyyppi, laivaaja.vapaaY, laivaaja.vapaaX, laivaaja.tsekattuAsento, false);
         kartta.visualisoi();
+        }
+        
+        //Lasketaan laivat
+        
+        for (int q=0; q<kartta.vihuPuoli.length; q++) {
+            for (int w=0; w<kartta.vihuPuoli[q].length; w++) {
+                if (kartta.vihuPuoli[q][w].laivatyyppi>0) {
+                    laskuri.vihunRuudut++;
+                }
+            }
+        }
+        
+        for (int q=0; q<kartta.omaPuoli.length; q++) {
+            for (int w=0; w<kartta.omaPuoli[q].length; w++) {
+                if (kartta.omaPuoli[q][w].laivatyyppi>0) {
+                    laskuri.omatRuudut++;
+                }
+            }
         }
         
         //Laivat on aseteltu, peli alkuun
@@ -134,13 +152,14 @@ public class Laivanupotus {
      * @return palauttaa tarkistetun luvun 
      */
     public static int kysyLuku(String kysymys) {
-        System.out.println(kysymys);
+        GUI.ilmoitus.setText(kysymys);
+        String virheilmoitus = "";
         boolean toimii = true;
         int luku =-1;
         
         do {
         
-        String vastaus = lukija.nextLine();
+            String vastaus = JOptionPane.showInputDialog(virheilmoitus + kysymys);
         
         try {
             vastaus = vastaus.trim(); //karsii mahdolliset välilyönnit
@@ -151,12 +170,14 @@ public class Laivanupotus {
             }
             else if (luku<=0) {
                 toimii = false;
-                System.out.println("Luvun on oltava suurempi kuin nolla! " + kysymys);
+                virheilmoitus = "Luvun on oltava suurempi kuin nolla! ";
+                GUI.ilmoitus.setText("Luvun on oltava suurempi kuin nolla! " + kysymys);
             }
         }
         
         catch (NumberFormatException e) {
-            System.out.println("Käytä vain numeroita! " + kysymys);
+            virheilmoitus = "Käytä vain numeroita! ";
+            GUI.ilmoitus.setText("Käytä vain numeroita! " + kysymys);
             toimii = false;
         }
     } while (!toimii);

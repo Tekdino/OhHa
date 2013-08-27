@@ -8,6 +8,7 @@ public class Laivaaja {
     Laskuri laskuri;
     int vapaaX;
     int vapaaY;
+    int tsekattuAsento;
     
     /**
      * Vaatii valmiin Tallentajan (joka siis sisältää Kartan)
@@ -73,15 +74,15 @@ public class Laivaaja {
         Random suunta = new Random(); //1 = vaaka, 2 = pysty
         int z = suunta.nextInt(1)+1; //arpoo joko luvun 1 tai 2
         if (z==1) {
-            if ((sarake + laivanPituus) <= laskuri.kartta.rivit) { //laiva mahtuu näinpäin
-                laivaa(laivanPituus, rivi, sarake, z, false); //laitetaan laiva tuohon kohtaan
+            if ((sarake + laivanPituus) <= laskuri.kartta.rivit) { //laiva mahtuu näinpäin                
+                tsekattuAsento = 1;
                 return true;
             }
             else return false; //laiva ei mahtunut
             }
-        if (z==2) {
+        else if (z==2) {
             if ((rivi + laivanPituus) <= laskuri.kartta.sarakkeet) { //laiva mahtuu näinpäin
-                laivaa(laivanPituus, rivi, sarake, z, false); //laitetaan laiva tuohon kohtaan
+                tsekattuAsento = 2;
                 return true;
             }
             else return false; //laiva ei mahtunut
@@ -119,7 +120,7 @@ public class Laivaaja {
             laskuri.kartta.vihuPuoli[rivi][sarake+i].laivatyyppi = laivanPituus;
           }
           }
-          if (suunta == 2) { //pystysuuntaan
+          else if (suunta == 2) { //pystysuuntaan
             for (int i=0; i<laivanPituus; i++) {
                 laskuri.kartta.vihuPuoli[rivi+i][sarake].laivatyyppi = laivanPituus;
             } 
