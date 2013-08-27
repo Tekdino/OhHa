@@ -48,38 +48,41 @@ public class Kartta {
      * Näyttää tekstiversion kartasta
      */
     public void visualisoi() {
-        System.out.println("Vastustaja:");
+        StringBuilder kokoa = new StringBuilder();
+        
+        kokoa.append("Vastustaja: " + "\n" );
         
         for (int sarakeluku=1; sarakeluku<vihuPuoli[1].length+1; sarakeluku++) {
             
-            if (sarakeluku < 10) { System.out.print("."+sarakeluku+"."); }
-            else if (sarakeluku >= 10) { System.out.print(sarakeluku+"."); }
+            if (sarakeluku < 10) { kokoa.append("."+sarakeluku+"."); }
+            else if (sarakeluku >= 10) { kokoa.append(sarakeluku+"."); }
         
         }
-        System.out.print("\n");
+        kokoa.append("\n");
         
         for (int rivi=0; rivi<vihuPuoli.length; rivi++) {
             for (int sarake=0; sarake<vihuPuoli[rivi].length; sarake++) {
-                System.out.print(vihuPuoli[rivi][sarake].toString(false));
+                kokoa.append(vihuPuoli[rivi][sarake].toString(false));
             }
-            System.out.println(rivi+1);
+            kokoa.append(rivi+"\n");
         }
-        System.out.println("Oma puoli:");
+        kokoa.append("Oma puoli: \n");
         
         for (int sarakeluku=1; sarakeluku<vihuPuoli[1].length+1; sarakeluku++) {
             
-            if (sarakeluku < 10) { System.out.print("."+sarakeluku+"."); }
-            else if (sarakeluku >= 10) { System.out.print(sarakeluku+"."); }
+            if (sarakeluku < 10) { kokoa.append("."+sarakeluku+"."); }
+            else if (sarakeluku >= 10) { kokoa.append(sarakeluku+"."); }
         }
         
-        System.out.print("\n");
+        kokoa.append("\n");
         
         for (int rivi=0; rivi<omaPuoli.length; rivi++) {
             for (int sarake=0; sarake<omaPuoli[rivi].length; sarake++) {
-                System.out.print(omaPuoli[rivi][sarake].toString(true));
+                kokoa.append(omaPuoli[rivi][sarake].toString(true));
             }
-            System.out.println(rivi+1);
+            kokoa.append(rivi+1 + "\n");
         }
+        GUI.peliruutu.setText(kokoa.toString());
     }
     
     /**

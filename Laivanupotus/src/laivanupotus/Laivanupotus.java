@@ -10,6 +10,7 @@ public class Laivanupotus {
 
     public static void  pelaa() {
         //Rakennellaan peli
+        GUI.ilmoitus.setText("Rakennellaan kartta");
         int leveys = kysyLuku("Kartan leveys ruutuina?");
         int korkeus = kysyLuku("Kartan korkeus ruutuina?");
         
@@ -20,6 +21,7 @@ public class Laivanupotus {
         kartta.visualisoi();
         
         //Lisätään laivat
+        GUI.ilmoitus.setText("Lisäillään laivat");
         int maara = kysyLuku("Montako laivaa lisätään?");
         boolean onnistuu;
         boolean sopii;
@@ -79,6 +81,7 @@ public class Laivanupotus {
             }
         }
         
+        GUI.ilmoitus.setText("Kohteita" + laskuri.vihunRuudut);
         //Laivat on aseteltu, peli alkuun
         
         do {
@@ -86,24 +89,24 @@ public class Laivanupotus {
                 int y;
                 do {
                 y = kysyLuku("Ammuksen sarakekoordinaatti?");
-                if (y> kartta.sarakkeet) { System.out.println("Sarakkeita on vain " + kartta.sarakkeet + "!"); }
+                if (y> kartta.sarakkeet) { GUI.ilmoitus.setText("Sarakkeita on vain " + kartta.sarakkeet + "!"); }
                 } while (y > kartta.sarakkeet);
                 int z;
                 do {
                 z = kysyLuku("Ammuksen rivikoordinaatti?");
-                if (z > kartta.rivit) { System.out.println("Rivejä on vain " + kartta.rivit + "!"); }
+                if (z > kartta.rivit) { GUI.ilmoitus.setText("Rivejä on vain " + kartta.rivit + "!"); }
                 } while (z > kartta.rivit);
                 ampuja.ammu(z-1, y-1); //pelaaja ampuu
                 
                 if (kartta.vihuPuoli[z-1][y-1].laivatyyppi >0) { //osuma
                     kartta.visualisoi();
                     laskuri.vihunRuudut --;
-                    System.out.println("Osuma! Ammu uudestaan");
+                    GUI.ilmoitus.setText("Osuma! Ammu uudestaan");
                 }
                 
                 else if (kartta.vihuPuoli[z-1][y-1].laivatyyppi == 0) { //huti
                     kartta.visualisoi();
-                    System.out.println("Huti");
+                    GUI.ilmoitus.setText("Huti");
                     laskuri.seuraavaVuoro();
                 }
                 
@@ -138,7 +141,7 @@ public class Laivanupotus {
         //jompikumpi osapuoli hävinnyt
         
         kartta.visualisoi();
-        System.out.println("Loppu");
+        GUI.ilmoitus.setText("Loppu");
         
     }
     
@@ -152,7 +155,6 @@ public class Laivanupotus {
      * @return palauttaa tarkistetun luvun 
      */
     public static int kysyLuku(String kysymys) {
-        GUI.ilmoitus.setText(kysymys);
         String virheilmoitus = "";
         boolean toimii = true;
         int luku =-1;
@@ -171,13 +173,11 @@ public class Laivanupotus {
             else if (luku<=0) {
                 toimii = false;
                 virheilmoitus = "Luvun on oltava suurempi kuin nolla! ";
-                GUI.ilmoitus.setText("Luvun on oltava suurempi kuin nolla! " + kysymys);
             }
         }
         
         catch (NumberFormatException e) {
             virheilmoitus = "Käytä vain numeroita! ";
-            GUI.ilmoitus.setText("Käytä vain numeroita! " + kysymys);
             toimii = false;
         }
     } while (!toimii);

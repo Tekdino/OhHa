@@ -10,22 +10,16 @@ public class GUI extends JFrame {
     public static Laivanupotus laivanupotus;
     
     public static JLabel ilmoitus;
-    public static JTextArea inputteri;
-    public static JButton entteri;
-    public static JTextField peliruutu;
+    public static JTextArea peliruutu;
     
     public GUI() {
         ilmoitus = new JLabel("Tervetuloa");
-        inputteri = new JTextArea(1,2);
-        entteri = new JButton("OK");
         
-        peliruutu = new JTextField("[?]");
+        peliruutu = new JTextArea("[?]");
         peliruutu.setEditable(false);
         
         JPanel ylakerta = new JPanel(new GridLayout());
         ylakerta.add(ilmoitus);
-        ylakerta.add(inputteri);
-        ylakerta.add(entteri);
         
         JPanel alakerta = new JPanel(new GridLayout());
         alakerta.add(peliruutu);
@@ -34,17 +28,6 @@ public class GUI extends JFrame {
         this.add("North", ylakerta);
         this.add("Center", alakerta);
         
-       //tapahtumakuuntelija
-        
-        entteri.addActionListener(
-        new ActionListener () {
-         public void actionPerformed(ActionEvent tapahtuma) {
-          //jotai tapahtuu
-        }
-      }
-    );
-                    
-        
         laivanupotus = new Laivanupotus();
     }
     
@@ -52,6 +35,7 @@ public class GUI extends JFrame {
         GUI ikkuna = new GUI(); 
         ikkuna.setTitle("Laivanupotus");
         ikkuna.pack();
+        ikkuna.setSize(600,600);
         ikkuna.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ikkuna.setVisible(true);
         
