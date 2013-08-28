@@ -76,7 +76,7 @@ public class Ruutu {
         
         //piilottaa löytämättömän laivan
         if (this.laivatyyppi > 0 && osuma == false && oma == false) {
-            merkki = "[ ]";
+            merkki = "[_]";
         }
         
         if (this.laivatyyppi == 0 && osuma == true) {
@@ -84,7 +84,7 @@ public class Ruutu {
         }
         
         if (this.laivatyyppi == 0 && osuma == false) {
-            merkki = "[ ]";
+            merkki = "[_]";
         }
         
         if (this.laivatyyppi > 0 && osuma == true) {

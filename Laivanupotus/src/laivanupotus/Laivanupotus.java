@@ -1,4 +1,5 @@
 package laivanupotus;
+import java.awt.Component;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -7,7 +8,8 @@ import javax.swing.JOptionPane;
  */
 public class Laivanupotus {
     public static Scanner lukija = new Scanner(System.in);
-
+    private static Component frame;
+    
     public static void  pelaa() {
         //Rakennellaan peli
         GUI.ilmoitus.setText("Rakennellaan kartta");
@@ -43,13 +45,13 @@ public class Laivanupotus {
             rivi = kysyLuku("Laivan ylimmän ruudun rivikoordinaatti?");
         }
         else {
-            System.out.println("Koska annettu asento oli jotain muuta kuin 1 tai 2, asennoksi otetaan vaaka!");
+            GUI.ilmoitus.setText("Koska annettu asento oli jotain muuta kuin 1 tai 2, asennoksi otetaan vaaka!");
             asento = 1;
             sarake = kysyLuku("Laivan vasemmanpuoleisimman ruudun sarakekoordinaatti?");
             rivi = kysyLuku("Mille riville laiva tulee?");
         }
         sopii = laivaaja.tunnusteleTilaus(tyyppi, rivi-1, sarake-1, asento); //sopiiko laiva näin
-        if (sopii == false) { System.out.println("Laiva ei mahdu näin! Kokeile uudestaan"); }
+        if (sopii == false) { JOptionPane.showMessageDialog(frame, "Laiva ei mahdu näin! Kokeile uudestaan"); }
             } while (sopii==false);
             
         laivaaja.laivaa(tyyppi, rivi-1, sarake-1, asento, true);
@@ -81,7 +83,7 @@ public class Laivanupotus {
             }
         }
         
-        GUI.ilmoitus.setText("Kohteita" + laskuri.vihunRuudut);
+        GUI.ilmoitus.setText("Kohteita " + laskuri.vihunRuudut);
         //Laivat on aseteltu, peli alkuun
         
         do {
@@ -89,12 +91,12 @@ public class Laivanupotus {
                 int y;
                 do {
                 y = kysyLuku("Ammuksen sarakekoordinaatti?");
-                if (y> kartta.sarakkeet) { GUI.ilmoitus.setText("Sarakkeita on vain " + kartta.sarakkeet + "!"); }
+                if (y> kartta.sarakkeet) { JOptionPane.showMessageDialog(frame, "Sarakkeita on vain " + kartta.sarakkeet + "!"); }
                 } while (y > kartta.sarakkeet);
                 int z;
                 do {
                 z = kysyLuku("Ammuksen rivikoordinaatti?");
-                if (z > kartta.rivit) { GUI.ilmoitus.setText("Rivejä on vain " + kartta.rivit + "!"); }
+                if (z > kartta.rivit) { JOptionPane.showMessageDialog(frame, "Rivejä on vain " + kartta.rivit + "!"); }
                 } while (z > kartta.rivit);
                 ampuja.ammu(z-1, y-1); //pelaaja ampuu
                 
@@ -102,6 +104,7 @@ public class Laivanupotus {
                     kartta.visualisoi();
                     laskuri.vihunRuudut --;
                     GUI.ilmoitus.setText("Osuma! Ammu uudestaan");
+                    JOptionPane.showMessageDialog(frame, "Osuma! Ammu uudestaan");
                 }
                 
                 else if (kartta.vihuPuoli[z-1][y-1].laivatyyppi == 0) { //huti
@@ -119,6 +122,7 @@ public class Laivanupotus {
    
                 if (sensori==true) { //osuu ekalla
                     laskuri.omatRuudut--;
+                    JOptionPane.showMessageDialog(frame, "Vastustaja osui laivaan ruudussa" + (ampuja.ammuttuX+1) + "x" +(ampuja.ammuttuY+1));
                     
                     do {
                     sensori2 = ampuja.viereen(ampuja.ammuttuX,ampuja.ammuttuY); //vastustajan uusi yritys
@@ -178,6 +182,11 @@ public class Laivanupotus {
         
         catch (NumberFormatException e) {
             virheilmoitus = "Käytä vain numeroita! ";
+            toimii = false;
+        }
+        
+        catch (NullPointerException x) {
+            virheilmoitus = "Elä jätä tyhjäksi! ";
             toimii = false;
         }
     } while (!toimii);

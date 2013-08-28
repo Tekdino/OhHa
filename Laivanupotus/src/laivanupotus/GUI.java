@@ -15,7 +15,7 @@ public class GUI extends JFrame {
     public GUI() {
         ilmoitus = new JLabel("Tervetuloa");
         
-        peliruutu = new JTextArea("[?]");
+        peliruutu = new JTextArea("");
         peliruutu.setEditable(false);
         
         JPanel ylakerta = new JPanel(new GridLayout());
