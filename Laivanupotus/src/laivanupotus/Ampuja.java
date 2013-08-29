@@ -27,7 +27,9 @@ public class Ampuja {
     }
     
     /**
-     * Ammutaan satunnaiseen kohtaan
+     * Ammutaan satunnaiseen kohtaan. Huom, ampuminen tulee johonkin pelaajan
+     * puolen ruuduista sillä metodi on tekoälyn käytössä. Ei ammu sellaiseen
+     * ruutuun johon on jo ammuttu aikaisemmin
      */
     public boolean isku() {
         Random arpoja = new Random();
@@ -48,7 +50,7 @@ public class Ampuja {
     }
     
     /**
-     * Ammutaan sopivaan kohtaan annettujen koordinaattien vieressä
+     * Ammutaan (vastustaja ampuu) sopivaan kohtaan annettujen koordinaattien vieressä
      * Palauttaa arvonaan true jos onnistui, false jos ei
      */
     public boolean viereen(int x, int y) {

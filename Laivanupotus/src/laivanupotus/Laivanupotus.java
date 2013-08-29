@@ -4,12 +4,16 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
- * Pelin komentoriviversio
+ * Varsinainen pelimekaniikka. Kokoaa yhteen tarvittavat luokat jotta pelin voi käynnistää
+ * (esim GUI) luomalla uusi Laivanupotus luokka ja ajamalla sen pelaa() metodi
  */
 public class Laivanupotus {
     public static Scanner lukija = new Scanner(System.in);
     private static Component frame;
     
+    /**
+     * Luo kaikki tarvittavat oliot ja käynnistää pelin
+     */
     public static void  pelaa() {
         //Rakennellaan peli
         GUI.ilmoitus.setText("Rakennellaan kartta");

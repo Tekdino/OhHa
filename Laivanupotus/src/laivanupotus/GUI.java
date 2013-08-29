@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Graafinen versio
+ * Graafinen käyttöliittymä, lataa ja käynnistää Laivanupotus-pelin
  */
 public class GUI extends JFrame {
     public static Laivanupotus laivanupotus;

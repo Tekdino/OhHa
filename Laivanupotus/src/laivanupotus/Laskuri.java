@@ -2,7 +2,7 @@ package laivanupotus;
 
 /**
  * Pitää kirjaa vuoroista, osumista, jäjellä olevista laivoista jne. Antaa pelin
- * lopuksi tiedot tallentajalle
+ * lopuksi tiedot tallentajalle (ei toteutettu vielä)
  */
 public class Laskuri {
     Kartta kartta;

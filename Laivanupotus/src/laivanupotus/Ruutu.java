@@ -30,10 +30,19 @@ public class Ruutu {
     
     //getterit
     
+    /**
+     * Palauttaa ruudun laivatyypin
+     * @return laivatyyppi kertoo minkä kokoista laivaa tuossa ruudussa
+     */
     public int getLaivatyyppi() {
         return this.laivatyyppi;
     }
     
+    /**
+     * Kertoo onko ruutuun ammuttu. EI SIIS kerro mitään mahdollisesta laivaan osumisesta
+     * ilman että selvitetään myös onko kyseisen ruudun laivatyyppi > 0
+     * @return 
+     */
     public boolean getOsuma() {
         return this.osuma;
     }
@@ -41,7 +50,7 @@ public class Ruutu {
     //setterit
     
     /**
-     * "Maalaa" laivaa ruudulle. Jos laivatyyppi on negatiivinen,
+     * "Maalaa" laivaa ruudulle. Jos laivatyypiksi annetaan negatiivinen,
      * käytetään arvoa 0
      * @param i laivatyyppi
      */
@@ -58,12 +67,20 @@ public class Ruutu {
     
     //Totuusarvo osuma on true kun ruutuun ammutaan
     
+    /**
+     * Ammutaan ruutuun eli totuusarvo osuman arvoksi annetaan true
+     * Toisin sanoen tämä on yksinkertainen setteri ellei tähän lisätä
+     * tarkistusta siitä onko ruutuun jo ammuttu aikaisemmin. Säännöt eivät
+     * kuitenkaan kiellä samaan ruutuun ampumista toista kertaa (jos pelaaja
+     * jostain syystä haluaa) ja tekoäly tarkistaa ettei niin käy muualla
+     */
     public void ammu() {
         this.osuma = true;
-        // TODO Selvitä laivatilanne ja kerro laskurille tjsp
     }
     
     /**
+     * Näyttää String-esityksen ruudusta. Jos tätä käytetään GUI:ssa, kannattaa
+     * valita fontti jossa merkkien leveys heilahtelee mahdollisimman vähän
      * @param oma saa arvon true jos kyseessä on omalla puolella oleva ruutu
      * näyttää tällöin siinä olevan löytämättömän laivan
      */ 

@@ -1,8 +1,8 @@
 package laivanupotus;
 
 /**
- *Sisältää kaksi taulukollista ruutuja joista toinen näytetään omana ja toinen 
- *vastustajana (laivat näkyvät vain kun niihin on osuttu)
+ *Sisältää kaksi matriisillista ruutuja joista toinen näytetään omana ja toinen 
+ *vastustajana (jonka laivat näkyvät vasta kun niihin on osuttu)
  */
 public class Kartta {
     public int rivit;
@@ -10,7 +10,11 @@ public class Kartta {
     public Ruutu[][] omaPuoli;
     public Ruutu[][] vihuPuoli;
     
-    
+    /**
+     * Parametriton konstruktori luo perinteisen 10x10 ruudukon peliä varten.
+     * Luokkaa ei kuitenkaan missään vaiheessa pysty enää lisäämään tällä tavalla
+     * ainakaan pelin tämänhetkisessä toteutuksessa
+     */
     public Kartta() {
         rivit = 10;
         sarakkeet = 10;
@@ -33,7 +37,8 @@ public class Kartta {
     }
     
     /**
-     * Luo jokaiseen matriisin lokeroon Ruudun
+     * Luo jokaiseen matriisin lokeroon Ruudun. Ruuduissa ei oletuksena ole
+     * laivoja eikä niihin ole ammuttu
      */
     public void aseta() {
         for (int rivi=0; rivi<rivit; rivi++) {
@@ -45,7 +50,8 @@ public class Kartta {
     }
     
     /**
-     * Näyttää tekstiversion kartasta
+     * Näyttää tekstiversion kartasta. Kerää tekstiesityksen yhteen StringBuilderilla
+     * ja lähettää graafisen käyttöliittymän peliruutu-komponenttiin
      */
     public void visualisoi() {
         StringBuilder kokoa = new StringBuilder();
@@ -86,7 +92,9 @@ public class Kartta {
     }
     
     /**
-     * Näyttää vihollisen puolen yhtä avoimesti kuin oman puolen
+     * Näyttää vihollisen puolen yhtä avoimesti kuin oman puolen. Tämä perustuu
+     * visualisoi() metodin vanhempaan versioon joka tulostaa kaiken system.out
+     * printtauksilla. Luotu vain nopeita käsintehtäviä testejä varten
      */
     public void debugVisualisoi() {
         System.out.println("Vastustaja:");
