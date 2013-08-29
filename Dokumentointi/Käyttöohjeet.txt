@@ -1,0 +1,1 @@
+Perustuu Milton Bradleyn Laivanupotus-peliin paitsi ett‰ t‰ss‰ pelaaja p‰‰tt‰‰ itse k‰ytett‰v‰n kent‰n koon ja laivojen koot ja m‰‰r‰t. Peli pyyt‰‰ itse k‰ytt‰j‰lt‰ selke‰sti tarvittavat tiedot. Alussa luodaan kartta, sitten asetellaan laivat paikoilleen ja sen j‰lkeen ammuskellaan vastustajan kartalle laivoja etsien. Osumasta saa toisen vuoron.

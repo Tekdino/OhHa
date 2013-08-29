@@ -1,0 +1,15 @@
+GUI - Graafinen k‰yttˆliittym‰ joka k‰yttˆliittym‰n lis‰ksi ainoastaan luo Laivanupotus-olion
+
+Laivanupotus - Sis‰lt‰‰ varsinaisen pelimekaniikan, luo ja kokoaa k‰ynnistett‰ess‰ loput luokat ja k‰y pelin l‰pi alusta loppuun
+
+Laskuri - Toteuttaa pelin suoritusaikaisen kirjanpidon, l‰hett‰isi tiedot pelin lopuksi Tallentajalle
+
+(Tallentaja - Tallentajan oli m‰‰r‰ ladata ja tallentaa tiedostoja Laskurin tietojen perusteella, ei toteutettu viel‰)
+
+Laivaaja - Sis‰lt‰‰ kaiken sen toiminnallisuuden mit‰ tarvitaan laivojen lis‰‰miseen kartalle. Osaa arpoa paikkoja, kokeilla asentoja ja pit‰‰ huolta siit‰ ett‰ laivat eiv‰t lentele taulukoiden ulkopuolelle
+
+Ruutu - Pelimekaniikan "atomi" joka sis‰lt‰‰ tiedon siit‰ onko siihen osuttu ja onko siin‰ laivaa
+
+Kartta - Kaksi Ruuduista tehty‰ matriisia joista toinen sis‰lt‰‰ pelaajan ja toinen tietokoneen kartan laivoineen
+
+Ampuja - Hoitaa kaiken ruutuihin ampumiseen ja ammuttavien ruutujen arpomiseen tarvittavan toiminnallisuuden
